@@ -5,10 +5,69 @@
  */
 package ch.hearc.ig.odi.peoplelist.business;
 
+import java.util.Date;
+
 /**
  *
  * @author renzo.scuderi
  */
 public class Person {
+    private Long id;
+    private String gender;
+    private String firstName;
+    private String lastName;
+    private Boolean married;
+    private Date birthDate;
+    
+    public Person(){
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Boolean getMarried() {
+        return married;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+    
+    public String getGender(){
+        return gender;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setMarried(Boolean married) {
+        this.married = married;
+    }
+    
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
     
 }
