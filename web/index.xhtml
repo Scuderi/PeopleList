@@ -4,7 +4,8 @@
     xml:lang="fr" lang="fr"
     xmlns="http://www.w3.org/1999/xhtml"   
     xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:f="http://xmlns.jcp.org/jsf/core">
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <h:head>
         <title>People List</title>
@@ -36,9 +37,12 @@
                 </tr>
                 <tr>
                     <td>BirthDate :</td>
-                    <td><h:inputText size="5" value="#{peopleListBean.birthDate}">
-                                     <f:convertDateTime pattern="d-M-yyyy"/>
-                        </h:inputText></td>
+                    <td>
+                        <input type="date" 
+                               jsf:value="#{peopleListBean.birthDate}">
+                            <f:convertDateTime pattern="YYYY-MM-dd" />
+                        </input>
+                    </td>
                 </tr>
                 <tr>
                     <td> </td>
