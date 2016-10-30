@@ -6,10 +6,9 @@
 package ch.hearc.ig.odi.peoplelist.presentation.bean;
 
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import ch.hearc.ig.odi.peoplelist.service.Services;
-import java.awt.event.ActionEvent;
+import ch.hearc.ig.odi.peoplelist.business.Person;
 import java.util.Date;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
@@ -22,9 +21,12 @@ import javax.enterprise.context.RequestScoped;
 //@Dependent
 @RequestScoped
 public class PeopleListBean {
+
     @Inject
     Services services;
-    
+
+    private Person person;
+
     private Long id;
     private String gender;
     private String firstName;
@@ -40,6 +42,10 @@ public class PeopleListBean {
         firstName = "";
         lastName = "";
         birthDate = null;
+    }
+    
+    public void deletePeople(){
+        services.deletePerson(person);
     }
 
     public List getPeopleList() {
@@ -92,6 +98,14 @@ public class PeopleListBean {
 
     public Date getBirthDate() {
         return birthDate;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public Person getPerson() {
+        return person;
     }
 
 }

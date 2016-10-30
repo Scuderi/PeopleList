@@ -104,20 +104,21 @@ public class Services implements Serializable{
      * @return L'ID de la nouvelle personne
      */
     public Long savePerson(String gender, String firstName, String lastName, Boolean married, Date birthDate){
-        Person person = new Person();
-        
+        Person person = new Person(); 
         currentMaxId++;
-        
         person.setId(currentMaxId);
         person.setGender(gender);
         person.setFirstName(firstName);
         person.setLastName(lastName);
         person.setBirthDate(birthDate);
         person.setMarried(married);
-        
         people.put(currentMaxId, person);
         
         return currentMaxId;
+    }
+    
+    public void deletePerson(Person person){
+        people.remove(person.getId());
     }
     
     public Person getPerson(Long id){
