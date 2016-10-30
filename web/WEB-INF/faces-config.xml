@@ -12,5 +12,8 @@
             <base-name>ch.hearc.ig.odi.peoplelist.bundle.messages</base-name>
             <var>msgs</var>
         </resource-bundle>
+        <message-bundle>
+            ch.hearc.ig.odi.peoplelist.bundle.messages
+        </message-bundle>
     </application>
 </faces-config>
