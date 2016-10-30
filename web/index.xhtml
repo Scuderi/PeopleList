@@ -30,16 +30,35 @@
             <table>
                 <tr>
                     <td>First name :</td>
-                    <td><h:inputText size="10" value="#{peopleListBean.firstName}" /></td>
+                    <td><h:inputText
+                            id="firstName"
+                            required="true"
+                            size="10" 
+                            label="First name"
+                            value="#{peopleListBean.firstName}"
+                            />
+                        <h:message for="firstName" showDetail="true" showSummary="true"/>                       
+                    </td>
                 </tr>
                 <tr>
                     <td>Last name :</td>
-                    <td><h:inputText size="20" value="#{peopleListBean.lastName}" /></td>
+                    <td><h:inputText
+                            id="lastName"
+                            required="true"
+                            label="Last name"
+                            size="20" 
+                            value="#{peopleListBean.lastName}" />
+                        <h:message for="lastName" showDetail="true" showSummary="true"/>  
+                    </td>
                 </tr>
                 <tr>
                     <td>BirthDate :</td>
                     <td>
                         <input type="date" 
+                               id="BirthDate"
+                               required="true"
+                               label="BirthDate"
+                               size="20" 
                                jsf:value="#{peopleListBean.birthDate}">
                             <f:convertDateTime pattern="YYYY-MM-dd" />
                         </input>
@@ -50,7 +69,7 @@
                     <td><h:commandButton value="Add People" 
                                          action="#{peopleListBean.addPeopleList}" /></td>
                 </tr>
-            </table>	  
+            </table>
         </h:form>
     </h:body>
 

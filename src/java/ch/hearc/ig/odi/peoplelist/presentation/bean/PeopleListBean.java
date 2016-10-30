@@ -26,7 +26,6 @@ public class PeopleListBean {
     Services services;
 
     private Person person;
-
     private Long id;
     private String gender;
     private String firstName;
