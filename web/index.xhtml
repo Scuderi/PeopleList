@@ -1,28 +1,53 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html 
-      xml:lang="fr" lang="fr"
-      xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    
+    xml:lang="fr" lang="fr"
+    xmlns="http://www.w3.org/1999/xhtml"   
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
     <h:head>
         <title>People List</title>
     </h:head>
     <h:body>
-        <h1>#{msgs['listeDePersonne']}</h1>
-        <h:dataTable value="#{peopleListBean.peopleList}" var="people">
-            <h:column>
-                #{people.firstName}
-            </h:column>
-            <h:column>
-                #{people.lastName}
-            </h:column>
-            <h:column>
-                #{people.birthDate}
-            </h:column>
-        </h:dataTable> 
+        <h:form>
+            <h1>#{msgs['listeDePersonne']}</h1>
+            <h:dataTable value="#{peopleListBean.peopleList}" var="people">
+                <h:column>
+                    #{people.firstName}
+                </h:column>
+                <h:column>
+                    #{people.lastName}
+                </h:column>
+                <h:column>
+                    #{people.birthDate}
+                </h:column>
+            </h:dataTable>
+            <h3>Add Employee</h3>
+            <hr/>
+            <table>
+                <tr>
+                    <td>First name :</td>
+                    <td><h:inputText size="10" value="#{peopleListBean.firstName}" /></td>
+                </tr>
+                <tr>
+                    <td>Last name :</td>
+                    <td><h:inputText size="20" value="#{peopleListBean.lastName}" /></td>
+                </tr>
+                <tr>
+                    <td>BirthDate :</td>
+                    <td><h:inputText size="5" value="#{peopleListBean.birthDate}">
+                                     <f:convertDateTime pattern="d-M-yyyy"/>
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td> </td>
+                    <td><h:commandButton value="Add People" 
+                                         action="#{peopleListBean.addPeopleList}" /></td>
+                </tr>
+            </table>	  
+        </h:form>
     </h:body>
-    
+
 </html>
 
